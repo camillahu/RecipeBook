@@ -40,19 +40,18 @@ namespace Codealong
             Difficulty = Convert.ToInt32(Console.ReadLine());
         }
 
-        public void AddCategory()
+        public void PrintShortRecipeInfo()
         {
-            
+            Console.WriteLine($"{Name}   Difficulty: {Difficulty}");
         }
+
+
+        
 
         //public List<EnumCategories> GetCategory()
         //{
         //    return Categories;
         //}
 
-        public void GetIngredients()
-        {
-
-        }
     }
 }

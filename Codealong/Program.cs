@@ -11,10 +11,8 @@ using Codealong.Commands.Commands;
 
 var mainMenu = new MainMenu();
 
-while (true)
-{
-    mainMenu.Run();
-}
+
+mainMenu.Run();
 
 
 

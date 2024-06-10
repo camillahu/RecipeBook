@@ -9,21 +9,30 @@ using Codealong.Commands.Commands;
 
 namespace Codealong.Commands
 {
-    internal class MainMenu : Methods
+    internal class MainMenu : Methods, ICommand
     {
-        ICommand[] Commands =
-        [
+        public int Option => 0;
+        public string Label => "Main menu";
+
+        public ICommand[] Commands => new ICommand[]
+        {
             new ViewAllRecipesCommand()
-        ];
+        };
 
         public void Run()
         {
             Console.Clear();
             Console.WriteLine("Welcome to your recipe book!");
+            PrintMenuName();
             ShowOptions();
             var input = AskForInt(Ask());
-            ICommand cmd = FindCommand(input, Commands);
-            cmd.Run();
+            var cmd = FindCommand(input, Commands);
+            cmd?.Run();
+        }
+
+        public void PrintMenuName()
+        {
+            Console.WriteLine($"{Label}");
         }
 
 

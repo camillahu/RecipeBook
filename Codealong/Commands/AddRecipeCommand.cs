@@ -20,7 +20,7 @@ internal class AddRecipeCommand : ICommand
 
     public void PrintMenuName()
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"{Option}. {Label}");
     }
 
     public void ShowOptions()
